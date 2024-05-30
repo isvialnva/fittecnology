@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+
+    <link rel="shortcut icon" href="{% static 'registration/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'registration/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'registration/css/fontawsom-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'registration/css/style.css' %}" />
+</head>
+
+<body>
+    <div class="container-fluid ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-sm-10 login-box">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-7 log-det">
+                            <div class="small-logo">
+
+                            </div>
+                            <h2>FitTechnology</h2>
+                            <div class="row">
+                                <ul>
+                                    <li><i class="fab fa-facebook-f"></i></li>
+                                    <li><i class="fab fa-twitter"></i></li>
+                                    <li><i class="fab fa-linkedin-in"></i></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <p class="small-info">Ingrese su usuario y contraseña</p>
+                            </div>
+
+                            <form class="login100-form validate-form" method="post" action="{% url 'login' %}"> {% csrf_token %}
+                                <div class="text-box-cont">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-username"><i class="fas fa-user"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control form-control-lg" id="id_username" placeholder="Username" name="username" required>
+                                    </div>
+                                     <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-pass"><i class="fas fa-lock"></i></span>
+                                        </div>
+                                        <input type="password" class="form-control form-control-lg" id="id_password" placeholder="Contraseña" name="password" required>
+                                    </div>
+                                    <div class="row">
+                                        <p class="forget-p">Forget Password ?</p>
+                                    </div>
+                                    <div class="input-group center mb-3">
+                                        <button type="submit" class="btn btn-success btn-round">Ingresar</button>
+                                        <a href="/" class="btn btn-success btn-round">Regresar</a>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="col-lg-4 col-md-5 box-de">
+                            <div class="ditk-inf">
+                                <h2 class="w-100">No tienes una cuenta, Registrate </h2>
+                                <p></p>
+                                <a href="#">
+                                <button type="button" class="btn btn-outline-light">Registrarse</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'registration/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'registration/js/popper.min.js' %}"></script>
+<script src="{% static 'registration/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'registration/js/script.js' %}"></script>
+
+
+</html>
