@@ -31,34 +31,9 @@
                                 </ul>
                             </div>
                             <div class="row">
-                                <p class="small-info">Ingrese su usuario y contraseña</p>
+                                <p class="small-info">Ingrese sus datos</p>
                             </div>
-                            {% if mensaje %}
-                                <p>{{mensaje}}</p>
-                            {% endif %}
-                            <form class="login100-form validate-form" method="post" action="{% url 'login' %}"> {% csrf_token %}
-                                <div class="text-box-cont">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="basic-username"><i class="fas fa-user"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control form-control-lg" id="id_username" placeholder="Username" name="username" required>
-                                    </div>
-                                     <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="basic-pass"><i class="fas fa-lock"></i></span>
-                                        </div>
-                                        <input type="password" class="form-control form-control-lg" id="id_password" placeholder="Contraseña" name="password" required>
-                                    </div>
-                                    <div class="row">
-                                        <p class="forget-p">Forget Password ?</p>
-                                    </div>
-                                    <div class="input-group center mb-3">
-                                        <button type="submit" class="btn btn-success btn-round">Ingresar</button>
-                                        <a href="/" class="btn btn-success btn-round">Regresar</a>
-                                    </div>
-                                </div>
-                            </form>
+                            <!-- Formulario -->
 
                         </div>
                         <div class="col-lg-4 col-md-5 box-de">

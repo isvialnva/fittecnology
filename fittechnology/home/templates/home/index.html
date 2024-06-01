@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="es">
 {% load static %}
 	<head>
 		<title>FitTechnology</title>
@@ -29,7 +29,6 @@
 								<li><a href="/">Inicio</a></li>
 								<li><a href="#">Generic</a></li>
 								<li><a href="#">Elements</a></li>
-								<li><a href="#">Registrate</a></li>
 								{% if user.is_authenticated %}
 									<li><a href="{% url 'gestion-index' %}">Gestión</a></li>
 									<li><a href="{% url 'logout' %}">Salir</a></li>
@@ -46,8 +45,8 @@
 					<section id="banner">
 						<div class="inner">
 							<div class="logo"><span class="icon fa-gem"></span></div>
-							<h2>Cuerpo sano</h2>
-							<p>Mente sana</p>
+							<h2>FitTechnology</h2>
+							<p>Cuerpo sano - Mente sana</p>
 						</div>
 					</section>
 
@@ -57,10 +56,10 @@
 						<!-- One -->
 							<section id="one" class="wrapper spotlight style1">
 								<div class="inner">
-									<a href="#" class="image"><img src="{% static 'home/images/pic01.jpg' %}" alt="" /></a>
+									<a href="#" class="image"><img src="{% static 'home/images/alimentos-saludables.jpg' %}" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Magna arcu feugiat</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+										<h2 class="major">Alimentos sanos para ti</h2>
+										<p>Comer más alimentos ricos en nutrientes, como aquellos con muchas vitaminas, minerales y fibra</p>
 										<a href="#" class="special">Learn more</a>
 									</div>
 								</div>
@@ -69,10 +68,10 @@
 						<!-- Two -->
 							<section id="two" class="wrapper alt spotlight style2">
 								<div class="inner">
-									<a href="#" class="image"><img src="{% static 'home/images/pic02.jpg' %}" alt="" /></a>
+									<a href="#" class="image"><img src="{% static 'home/images/ejercicio-saludable.jpg' %}" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Tempus adipiscing</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+										<h2 class="major">Rutina de ejercicios</h2>
+										<p>El ejercicio previene problemas de salud, fortalece, aumenta la energía y puede ayudarlo a reducir el estrés</p>
 										<a href="#" class="special">Learn more</a>
 									</div>
 								</div>
@@ -81,10 +80,10 @@
 						<!-- Three -->
 							<section id="three" class="wrapper spotlight style3">
 								<div class="inner">
-									<a href="#" class="image"><img src="{% static 'home/images/pic03.jpg' %}" alt="" /></a>
+									<a href="#" class="image"><img src="{% static 'home/images/ejercicios-meditacion.jpg' %}" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Nullam dignissim</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+										<h2 class="major">Mente sana</h2>
+										<p>La estabilidad emocional hace que las personas sean capaces de controlar sus actitudes y mantenerse equilibrados ante situaciones difíciles</p>
 										<a href="#" class="special">Learn more</a>
 									</div>
 								</div>
@@ -93,8 +92,8 @@
 						<!-- Four -->
 							<section id="four" class="wrapper alt style1">
 								<div class="inner">
-									<h2 class="major">Vitae phasellus</h2>
-									<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+									<h2 class="major">Actualidad</h2>
+									<p>Conoce las últimas noticias y videos sobre salud, bienestar, nutrición y enfermedades</p>
 									<section class="features">
 										<article>
 											<a href="#" class="image"><img src="{% static 'home/images/pic04.jpg' %}" alt="" /></a>
@@ -132,12 +131,12 @@
 				<!-- Footer -->
 					<section id="footer">
 						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+							<h2 class="major">Tienes preguntas</h2>
+							<p>Comunícate con nosotros</p>
 							<form method="post" action="#">
 								<div class="fields">
 									<div class="field">
-										<label for="name">Name</label>
+										<label for="name">Nombre</label>
 										<input type="text" name="name" id="name" />
 									</div>
 									<div class="field">
@@ -145,28 +144,25 @@
 										<input type="email" name="email" id="email" />
 									</div>
 									<div class="field">
-										<label for="message">Message</label>
+										<label for="message">Mensaje</label>
 										<textarea name="message" id="message" rows="4"></textarea>
 									</div>
 								</div>
 								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
+									<li><input type="submit" value="Enviar Mensaje" /></li>
 								</ul>
 							</form>
 							<ul class="contact">
 								<li class="icon solid fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
+									Colegio Melvin Jones<br />
+									Carrera 1#5-19<br />
+									Lomas de cartagena
 								</li>
-								<li class="icon solid fa-phone">(000) 000-0000</li>
-								<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-								<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
+								<li class="icon solid fa-phone">(057) 123-456789</li>
+								<li class="icon solid fa-envelope"><a href="#">salud@melvinjones.edu.co</a></li>
 							</ul>
 							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; FitTechnology</li>
 							</ul>
 						</div>
 					</section>

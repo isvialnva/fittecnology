@@ -1,0 +1,72 @@
+{% extends "gestion/base.html" %}
+{% load static from static %}
+{% block content %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Personas por curso </h1>
+        <a href="{% url 'grados-list' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+            <i class="fas fa-sync-alt fa-sm text-white-50"></i>
+            Regresar
+        </a>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th class="text-center">Tipo documento</th>
+                        <th>Identificación</th>
+                        <th>Nombres y apellidos</th>
+                        <th>Fecha de nacimiento</th>
+                        <th class="text-center">Edad</th>
+                        <th class="text-center">Sexo</th>
+                        <th class="text-center">Peso</th>
+                        <th class="text-center">Altura</th>
+                        <th class="text-center">IMC</th>
+                        <th>Clasificación</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                {% for data in object_list %}
+                    <tr>
+                        <td class="text-center">{{data.tipo_identificacion}}</td>
+                        <td>{{data.identificacion}}</td>
+                        <td>{{data.primer_nombre}}
+                            {% if data.segundo_nombre %}{{data.segundo_nombre}} {% endif %}
+                            {{data.primer_apellido}}
+                            {% if data.segundo_apellido %}{{data.segundo_apellido}}{% endif %}</td>
+                        <td>{{data.fecha_nacimiento}}</td>
+                        <td class="text-center">{{data.edad}}</td>
+                        <td class="text-center">{{data.sexo}}</td>
+                        <td class="text-center">{{data.peso}}</td>
+                        <td class="text-center">{{data.altura}}</td>
+                        <td class="text-center">
+                            {% if data.imc < 18.5 %}
+                                <span class="text-info">{{data.imc}}</span>
+                            {% elif data.imc > 18.5 and data.imc < 24.9 %}
+                                <span class="text-success">{{data.imc}}</span>
+                            {% elif data.imc > 25 and data.imc < 29.9 %}
+                                <span class="text-warning">{{data.imc}}</span>
+                            {% elif data.imc > 30 %}
+                                <span class="text-danger">{{data.imc}}</span>
+                            {% endif %}
+                        </td>
+                        <td>{{data.clasificacion}}</td>
+                        <td class="text-center">
+                            <a href="{% url 'cursopersona-edit' id_clas data.id %}" class="btn btn-outline-info"><i class="fas fa-pencil-alt"></i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "gestion/base.html" %}
+{% load static from static %}
+{% block content %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Bienvenido {{ username }}</h1>
+        {% if datospersona %}
+            {% for datos in datospersona %}
+            <a href="{% url 'datopersona-edit' datos.id %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <i class="fas fa-plus fa-sm text-white-50"></i>
+                Actualizar perfil
+            </a>
+            {% endfor %}
+        {% else %}
+            <a href="{% url 'datopersona-add' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <i class="fas fa-plus fa-sm text-white-50"></i>
+                Actualizar perfil
+            </a>
+        {% endif %}
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+        {% for datos in datospersona %}
+        <div class="col-md-4">
+            <span>Tipo de identificación: {{datos.tipo_identificacion}}</span><br>
+            <span>Número de identificación: {{datos.identificacion}}</span><br>
+            <span>Fecha de nacimiento: {{datos.fecha_nacimiento}}</span><br>
+            <span>Sexo: {{datos.sexo}}</span><br>
+            <span>Curso: {{datos.clasificacion}}</span><br>
+        </div>
+        <div class="col-md-4">
+            <span>Primer nombre: {{datos.primer_nombre}}</span><br>
+            <span>Segundo nombre: {{datos.segundo_nombre}}</span><br>
+            <span>Primer apellido: {{datos.primer_apellido}}</span><br>
+            <span>Segundo apellido: {{datos.segundo_apellido}}</span><br>
+        </div>
+        <div class="col-md-4">
+            <span>Edad: {{datos.edad}}</span><br>
+            <span>Peso: {{datos.peso}}</span><br>
+            <span>Altura en centímetros: {{datos.altura}}</span><br>
+            <span>IMC: {{datos.imc}}</span><br>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+{% endblock %}

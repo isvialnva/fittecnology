@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+
+    <link rel="shortcut icon" href="{% static 'registration/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'registration/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'registration/css/fontawsom-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'registration/css/style.css' %}" />
+</head>
+
+<body>
+    <div class="container-fluid ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-sm-10 login-box">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-7 log-det">
+                            <div class="small-logo">
+
+                            </div>
+                            <h2>FitTechnology</h2>
+                            <div class="row">
+                                <ul>
+                                    <li><i class="fab fa-facebook-f"></i></li>
+                                    <li><i class="fab fa-twitter"></i></li>
+                                    <li><i class="fab fa-linkedin-in"></i></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <p class="small-info">Ingrese sus datos</p>
+                            </div>
+
+                            <form action="" method="post">{% csrf_token %}
+                                {% if error %}
+                                    <p>{{ error }}</p>
+                                {% endif %}
+                                {{form.as_p}}
+                                <input class="btn btn-outline-info" type="submit" name="registrarse" value="Registrarse">
+
+                            </form>
+
+
+                        </div>
+                        <div class="col-lg-4 col-md-5 box-de">
+                            <div class="ditk-inf">
+                                <h2 class="w-100">Ya estas registrado</h2>
+                                <p></p>
+                                <a href="{% url 'login' %}">
+                                <button type="button" class="btn btn-outline-light">Ingresar</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'registration/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'registration/js/popper.min.js' %}"></script>
+<script src="{% static 'registration/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'registration/js/script.js' %}"></script>
+
+
+</html>
