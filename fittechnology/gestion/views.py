@@ -129,3 +129,23 @@ class EditDatoPersonaCurso(UpdateView):
         context = super().get_context_data(**kwargs)
         context['id_clas'] = self.kwargs.get('id_clas')
         return context
+
+
+class EstudianteDetail(TemplateView):
+    template_name = 'gestion/estudiante_detalle.html'
+
+    @method_decorator(login_required(login_url=LOGOUT_REDIRECT_URL))
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.has_perm('gestion.view_datospersona'):
+            return redirect(LOGIN_REDIRECT_URL)
+        return super(EstudianteDetail, self).dispatch(request, *args, **kwargs)
+
+
+class DocenteDetail(TemplateView):
+    template_name = 'gestion/docente_detalle.html'
+
+    @method_decorator(login_required(login_url=LOGOUT_REDIRECT_URL))
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.has_perm('gestion.view_datospersona'):
+            return redirect(LOGIN_REDIRECT_URL)
+        return super(DocenteDetail, self).dispatch(request, *args, **kwargs)

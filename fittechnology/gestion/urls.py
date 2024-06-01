@@ -1,6 +1,7 @@
 from django.urls import path, include
 from .views import (gestionindex, ListClasificacion, AddClasificacion, DeleteClasificacion, EditClasificacion,
-                    ListDatosPersona, AddDatoPersona, EditDatoPersona, ListDatoPersonaCurso, EditDatoPersonaCurso)
+                    ListDatosPersona, AddDatoPersona, EditDatoPersona, ListDatoPersonaCurso, EditDatoPersonaCurso,
+                    EstudianteDetail, DocenteDetail)
 
 
 urlpatterns = [
@@ -14,4 +15,7 @@ urlpatterns = [
     path('datopersona-edit/<int:pk>', EditDatoPersona.as_view(), name='datopersona-edit'),
     path('cursopersona-list/<int:id_clas>', ListDatoPersonaCurso.as_view(), name='cursopersona-list'),
     path('cursopersona-edit/<int:id_clas>/<int:pk>', EditDatoPersonaCurso.as_view(), name='cursopersona-edit'),
+    path('estudiante-detalle', EstudianteDetail.as_view(), name='estudiante-detalle'),
+    path('docente-detalle', DocenteDetail.as_view(), name='docente-detalle'),
+
 ]
